@@ -1,0 +1,12 @@
+{% extends "main/base.html" %}
+
+
+{% block content %}
+
+<form method="post">{% csrf_token %}
+    <p>Вы уверены что хотите удалить "{{ object }}"?</p>
+    {{ form }}
+    <a href="{{ view.get_success_url }}" class="btn btn-primary">Нет</a>
+    <input type="submit" class="btn btn-danger" value="Да">
+</form>
+{% endblock content %}

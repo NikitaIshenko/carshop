@@ -1,0 +1,365 @@
+{
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/node_modules/**": true
+    },
+    "files.associations": {
+        "**/*.html": "html",
+        "**/templates/**/*.html": "django-html",
+        "**/templates/**/*": "django-txt",
+        "**/requirements{/**,*}.{txt,in}": "pip-requirements"
+    },
+    "python.pythonPath": "/home/popov/django3/bin/python3",
+    "python.terminal.activateEnvironment": true,
+    "workbench.colorTheme": "Tokyo Night Light",
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.fontFamily": "JetBrainsMono Nerd Font",
+    "editor.fontLigatures": true,
+    "workbench.editor.enablePreview": false,
+    "editor.rename.enablePreview": false,
+    "vim.leader": ",",
+    "vim.easymotion": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": false,
+    "vim.statusBarColorControl": true,
+    "vim.statusBarColors.normal": [
+        "#8FBCBB",
+        "#434C5E"
+    ],
+    "vim.statusBarColors.insert": "#BF616A",
+    "vim.statusBarColors.visual": "#B48EAD",
+    "vim.statusBarColors.visualline": "#B48EAD",
+    "vim.statusBarColors.visualblock": "#A3BE8C",
+    "vim.statusBarColors.replace": "#D08770",
+    "vim.statusBarColors.commandlineinprogress": "#007ACC",
+    "vim.statusBarColors.searchinprogressmode": "#007ACC",
+    "vim.statusBarColors.easymotionmode": "#007ACC",
+    "vim.statusBarColors.easymotioninputmode": "#007ACC",
+    "vim.statusBarColors.surroundinputmode": "#007ACC",
+    "workbench.colorCustomizations": {
+        "editor.renderIndentGuides": true,
+        "statusBar.background": "#8FBCBB",
+        "statusBar.noFolderBackground": "#8FBCBB",
+        "statusBar.debuggingBackground": "#8FBCBB",
+        "statusBar.foreground": "#434C5E"
+    },
+    "keyboard.dispatch": "keyCode",
+    "emmet.includeLanguages": {
+        "django-html": "html",
+        "javascript": "html",
+    },
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.linting.lintOnSave": true,
+    "python.languageServer": "Pylance",
+    "python.linting.pylintArgs": [
+        "--load-plugins=pylint_django"
+    ],
+    "todo-tree.tree.showScanModeButton": false,
+    "[javascript]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "[django-html, html]": {
+        "editor.defaultFormatter": "HookyQR.beautify",
+    },
+    "explorer.confirmDelete": false,
+    "formatSelectionAsHtml.formatter": "prettier",
+    "beautify.language": {
+        "js": {
+            "type": [
+                "javascript",
+                "json",
+                "jsonc"
+            ],
+            "filename": [
+                ".jshintrc",
+                ".jsbeautifyrc"
+            ]
+        },
+        "css": [
+            "css",
+            "less",
+            "scss"
+        ],
+        "html": [
+            "htm",
+            "html"
+        ]
+    },
+    "vim.hlsearch": true,
+    "vim.normalModeKeyBindings": [
+        //editor.action.revealDefinition
+        //HookyQR.beautifyFile
+        {
+            "before": [
+                "<leader>",
+                "b",
+                "e"
+            ],
+            "commands": [
+                "HookyQR.beautifyFile"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "g",
+                "d"
+            ],
+            "commands": [
+                "editor.action.revealDefinition"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "n",
+                "e"
+            ],
+            "commands": [
+                "workbench.action.toggleSidebarVisibility"
+            ]
+        },
+        // workbench.action.showCommands
+        //workbench.action.quickOpenNavigateNextInEditorPicker
+        //workbench.action.closeGroup
+        //workbench.action.closeActiveEditor
+        //workbench.action.showAllSymbols
+        {
+            "before": [
+                "<leader>",
+                "p",
+            ],
+            "commands": [
+                "workbench.action.showAllSymbols"
+            ]
+        },
+        //workbench.action.openWorkspaceSettingsFile
+        {
+            "before": [
+                "<leader>",
+                "s",
+                "e"
+            ],
+            "commands": [
+                // "workbench.action.openWorkspaceSettingsFile"
+                "workbench.action.openSettingsJson"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "t",
+            ],
+            "commands": [
+                "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
+            ]
+        },
+        {
+            "before": [
+                "q",
+            ],
+            "commands": [
+                "workbench.action.closeActiveEditor"
+            ]
+        },
+        // {
+        //     "before": [
+        //         "<leader>",
+        //         "p",
+        //     ],
+        //     "commands": [
+        //         "workbench.action.quickOpen"
+        //     ]
+        // },
+        {
+            "before": [
+                "<leader>",
+                "n",
+                "t"
+            ],
+            "commands": [
+                "workbench.action.quickOpenTerm"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "<leader>",
+                "m"
+            ],
+            "commands": [
+                "workbench.action.minimizeOtherEditors"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "w"
+            ],
+            //test
+            "commands": [
+                "workbench.action.files.saveAll"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "n",
+                "f"
+            ],
+            "commands": [
+                "filesExplorer.findInFolder"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "e",
+                "d"
+            ],
+            "commands": [
+                "workbench.files.action.focusOpenEditorsView"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "s",
+                "p"
+            ],
+            "commands": [
+                "editor.action.insertSnippet"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "m",
+                "a"
+            ],
+            "commands": [
+                "editor.emmet.action.matchTag"
+            ]
+        }
+    ],
+    "vim.visualModeKeyBindings": [
+        {
+            "before": [
+                ">"
+            ],
+            "commands": [
+                "editor.action.indentLines"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "s",
+                "p"
+            ],
+            "commands": [
+                "editor.action.insertSnippet"
+            ]
+        },
+        {
+            "before": [
+                "<"
+            ],
+            "commands": [
+                "editor.action.outdentLines"
+            ]
+        },
+    ],
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
+    "bracket-pair-colorizer-2.colors": [
+        "blue",
+        "red",
+        "green",
+        "maroon",
+        "purple",
+        "teal",
+    ],
+    "highlight-matching-tag.styles": {
+        "opening": {
+            "name": {
+                "underline": "red"
+            }
+        }
+    },
+    "explorer.confirmDragAndDrop": false,
+    "git.enableSmartCommit": true,
+    "open-in-browser.default": "Chrome",
+    "[scss]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "[html, django-html]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "editor.largeFileOptimizations": false,
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "keyword",
+                "settings": {
+                    "fontStyle": "bold"
+                }
+            },
+            {
+                "scope": "storage",
+                "settings": {
+                    "fontStyle": "bold"
+                }
+            },
+            {
+                "scope": "constant.language",
+                "settings": {
+                    "fontStyle": "bold"
+                }
+            },
+            {
+                "scope": "support.class.builtin",
+                "settings": {
+                    "fontStyle": "bold"
+                }
+            }
+        ]
+    },
+    "window.menuBarVisibility": "compact",
+    "vim.foldfix": true,
+    "editor.showFoldingControls": "always",
+    "editor.unfoldOnClickAfterEndOfLine": true,
+    "folder-indexing.exclude": [
+        "*node_modules*",
+        "*.git",
+        "*cache*",
+        "*__pycache__*"
+    ],
+    "terminal.integrated.fontFamily": "FiraCode NF",
+    "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim.appimage",
+    "workbench.startupEditor": "none",
+    "window.zoomLevel": 1,
+    "editor.fontSize": 13,
+    "terminal.integrated.fontSize": 12,
+    "python.linting.pylintPath": "/home/popov/.local/bin/pylint",
+    "python.formatting.autopep8Path": "black",
+    "python.formatting.blackPath": "/home/popov/.local/bin/black",
+    "editor.formatOnSave": true,
+    "python.formatting.provider": "black",
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 15000,
+    "cssPeek.trace.server": "verbose",
+    "editor.definitionLinkOpensInPeek": true,
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.python"
+    }
+}
