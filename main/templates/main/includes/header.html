@@ -3,12 +3,32 @@
         
         <div class="navbar navbar-dark bg-dark shadow-sm">
             <div class="container">
+
+                
+
                 <a href="{% url 'main:index' %}" class="navbar-brand d-flex align-items-center">
                     <strong>CARSHOP</strong>
                 </a>
-                <a href="{% url 'automobile:index' %}" class="navbar-brand d-flex align-items-center">Автомобили</a>
-                <a href="{% url 'sales:index' %}" class="navbar-brand d-flex align-items-center">Продажи</a>
-                <a href="{% url 'users:index' %}" class="navbar-brand d-flex align-items-center">Пользователи</a>
+                
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Автомобили
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a href="{% url 'automobile:index' %}" class="dropdown-item">Автомобили</a></li>
+                      <li><a href="{% url 'automobile:index_eq' %}" class="dropdown-item">Комплектации</a></li>
+                    </ul>
+                  </div>
+                  <div class="dropdown">
+                      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Пользователи
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="{% url 'users:index' %}" class="dropdown-item">Клиенты</a></li>
+                            <li><a href="{% url 'users:index_saller' %}" class="dropdown-item">Продавцы</a></li>
+                        </ul>
+                    </div>
+                    <a href="{% url 'sales:index' %}" class="navbar-brand d-flex align-items-center">Продажи</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>

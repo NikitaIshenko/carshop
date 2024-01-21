@@ -29,7 +29,7 @@ class Automobile(models.Model):
 
 
 class AutomobileModel(models.Model):
-    name = models.CharField("Наименование модели автомобиля")
+    name = models.CharField("Наименование модели автомобиля", max_length=255)
     mark_auto = models.ForeignKey(
         "automobile.AutomobileMark",
         on_delete=models.CASCADE,
@@ -46,7 +46,7 @@ class AutomobileModel(models.Model):
 
 
 class AutomobileMark(models.Model):
-    name = models.CharField("Наименование марки автомобиля")
+    name = models.CharField("Наименование марки автомобиля", max_length=255)
 
     class Meta:
         verbose_name = "Марка автомобиля"
@@ -57,11 +57,10 @@ class AutomobileMark(models.Model):
 
 
 class Equipment(models.Model):
-    body_color = models.CharField("Цвет кузова", max_length=60)
+    body = models.ForeignKey('automobile.Body', on_delete=models.CASCADE, related_name="equipments")
+    interior = models.ForeignKey('automobile.Interior', on_delete=models.CASCADE, related_name="equipments")
     heated_wheel = models.BooleanField("Наличие подогрева руля")
     electric_window = models.BooleanField("Наличие электрических стеклоподъемников")
-    interior_color = models.CharField("Цвет салона", max_length=60)
-    interior_trim = models.CharField("Отделка салона", max_length=60)
     parking_sensor = models.BooleanField("Наличие датчика парковки")
     center_lock = models.BooleanField("Наличие центрального замка")
 
@@ -71,4 +70,38 @@ class Equipment(models.Model):
 
     def __str__(self) -> str:
         return f"Комплектация №{self.id}"
+
+class Color(models.Model):
+    title = models.CharField("Название", max_length=155)
+
+    def __str__(self) -> str:
+        return self.title
+    
+    class Meta:
+        verbose_name = "Цвет"
+        verbose_name_plural = "Цвета"
+    
+class Body(models.Model):
+    type_body = models.CharField("Тип кузова", max_length=155)
+    color = models.ForeignKey(Color, on_delete=models.CASCADE, related_name='bodies')
+
+    def __str__(self) -> str:
+        return f"Кузов - {self.type_body} - {self.color}"
+    
+    class Meta:
+        verbose_name = "Кузов"
+        verbose_name_plural = "Кузовы"
+
+class Interior(models.Model):
+    decoration = models.CharField("Отделка", max_length=155)
+    color = models.ForeignKey(Color, on_delete=models.CASCADE, related_name='interiors')
+
+    def __str__(self) -> str:
+        return f"Салон - {self.decoration} - {self.color}"
+    
+    class Meta:
+        verbose_name = "Салон"
+        verbose_name_plural = "Салоны"
+
+
 

@@ -6,11 +6,19 @@ from django.urls import reverse_lazy
 def index(request):
 
     context = {
-        "title": "Пользователи",
+        "title": "Клиенты",
         "clients": Client.objects.all(),
-        "sallers": Saller.objects.all()
+        
     }
     return render(request, 'users/index.html', context)
+
+def index_saller(request):
+
+    context = {
+        "title": "Продавцы",
+        "sallers": Saller.objects.all()
+    }
+    return render(request, 'users/index_saller.html', context)
 
 class ClientUpdate(UpdateView):
     model = Client

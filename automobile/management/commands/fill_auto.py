@@ -1,5 +1,5 @@
 from django.core.management import BaseCommand
-from automobile.models import Automobile, AutomobileMark, AutomobileModel, Equipment
+from automobile.models import Automobile, AutomobileMark, AutomobileModel, Equipment, Color, Body, Interior
 import random
 import string
 
@@ -17,6 +17,9 @@ class Command(BaseCommand):
             AutomobileMark.objects.all().delete()
             AutomobileModel.objects.all().delete()
             Equipment.objects.all().delete()
+            Body.objects.all().delete()
+            Interior.objects.all().delete()
+            Color.objects.all().delete()
 
         marks = [
             {"BMW": ["X1", "X2", "X3", "X6", "I8", "3 GT", "5 GT"]},
@@ -37,16 +40,31 @@ class Command(BaseCommand):
                     AutomobileModel.objects.create(name=model, mark_auto=mark)
 
         colors = ["Черный", "Белый", "Розовый", "Красный", "Синий", "Желтый"]
+
+        for color in colors:
+            Color.objects.create(title=color)
+        
+        colors = Color.objects.all()
+
         interior_trims = ["Алькантара", "Кожа", "Ткань"]
+        body_types = ["Седан", "Лифтбек", "Хэтчбэк", "Джип"]
+
+        for i in range(10):
+            Interior.objects.create(color=random.choice(colors), decoration=random.choice(interior_trims))
+            Body.objects.create(color=random.choice(colors), type_body=random.choice(body_types))
+
+
+        
+        bodies = Body.objects.all()
+        interiors = Interior.objects.all()
         bools = [True, False] 
 
         print("Создаем комплектации для машин!")
 
         for _ in range(30):
             Equipment.objects.create(
-                body_color = random.choice(colors),
-                interior_color = random.choice(colors),
-                interior_trim = random.choice(interior_trims),
+                body = random.choice(bodies),
+                interior = random.choice(interiors),
                 heated_wheel = random.choice(bools),
                 electric_window = random.choice(bools),
                 parking_sensor = random.choice(bools),
