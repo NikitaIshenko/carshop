@@ -29,6 +29,18 @@
                         </ul>
                     </div>
                     <a href="{% url 'sales:index' %}" class="navbar-brand d-flex align-items-center">Продажи</a>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Отчёт
+                          </button>
+                          <ul class="dropdown-menu">
+                              <li><a href="{% url 'main:marks' %}" class="dropdown-item">Наличие комплектаций</a></li>
+                              <li><a href="{% url 'main:top_saller' %}" class="dropdown-item">Продавец с большой суммой продаж</a></li>
+                              <li><a href="{% url 'main:client_card' %}" class="dropdown-item">Личная карточка клиента</a></li>
+                              <li><a href="{% url 'main:most_mark_eq' %}" class="dropdown-item">Топ покупаемых марок и комплектаций</a></li>
+
+                          </ul>
+                      </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>

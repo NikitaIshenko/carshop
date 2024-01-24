@@ -1,0 +1,27 @@
+{% extends "main/base.html" %}
+{% block content %}
+<main> 
+    <table class="table table-striped">
+  <thead>
+    
+    <tr>
+        <th scope="col">ФИО</th>
+        <th scope="col">Цена продаж</th>
+        <th scope="col">Номер телефона</th>
+        <th scope="col">Email</th>
+      
+    </tr>
+    
+  </thead>
+  <tbody>
+  <tr>
+    <td>{{ saller.full_name }}</td>
+    <td>{{ top_saller.total_sales }} руб.</td>
+    <td>{{ saller.phone_number }}</td>
+    <td>{{ saller.email }}</td>
+
+  </tr>
+  </tbody>
+</table>
+</main>
+{% endblock %}
